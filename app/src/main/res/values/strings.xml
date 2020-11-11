@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">blooddonation</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="home">Home</string>
+    <string name="donate">Donate</string>
+    <string name="settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_donate">Donate</string>
+    <string name="title_settings">Settings</string>
+    <string name="loginButtonName">LOGIN</string>
+    <string name="signUpButtonName">SIGN UP</string>
+    <string name="idEditTextHint">EMAIL ID / PHONE NUMBER</string>
+    <string name="passwordEditTextHint">PASSWORD</string>
+    <string name="loginErrorMessage">Invalid Credentials</string>
+    <string name="userNameEditTextHint">YOUR NAME</string>
+    <string name="emailAddressEditTextHint">EMAIL ID</string>
+    <string name="phoneNumberEditTextHint">PHONE NUMBER</string>
+    <string name="addressEditTextHint">ADDRESS</string>
+    <string name="dobEditTextHint">DATE OF BIRTH</string>
+    <string name="emptyEmailorPhoneNumber">Enter ID</string>
+    <string name="emptyPasswordError">Enter Password</string>
+    <string name="emptyYourNameError">Enter your name</string>
+    <string name="emptyEmailAddressError">Enter your Email Address</string>
+    <string name="emptyPhoneNumberError">Enter your Phone Number</string>
+    <string name="emptyConfirmPasswordError">Verify your Password in Confirm Password</string>
+    <string name="passwordNotMatchError">Password did not match</string>
+    <string name="confirmPasswordEditTextHint">CONFIRM PASSWORD</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="userAlreadyExistError">An account with this phone number already exist</string>
+    <string name="userSuccessfullyAdded">Account successfully created</string>
+</resources>
