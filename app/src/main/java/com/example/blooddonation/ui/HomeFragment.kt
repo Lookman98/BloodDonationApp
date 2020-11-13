@@ -18,4 +18,8 @@ class HomeFragment : Fragment() {
         val homeView = inflater.inflate(R.layout.fragment_home, container, false)
         return homeView
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+    }
 }

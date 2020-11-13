@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">blooddonation</string>
+    <string name="app_name">Blood Donation App</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -22,7 +22,7 @@
     <string name="passwordEditTextHint">PASSWORD</string>
     <string name="loginErrorMessage">Invalid Credentials</string>
     <string name="userNameEditTextHint">YOUR NAME</string>
-    <string name="emailAddressEditTextHint">EMAIL ID</string>
+    <string name="emailAddressEditTextHint">EMAIL</string>
     <string name="phoneNumberEditTextHint">PHONE NUMBER</string>
     <string name="addressEditTextHint">ADDRESS</string>
     <string name="dobEditTextHint">DATE OF BIRTH</string>
@@ -37,4 +37,21 @@
     <string name="title_activity_dashboard">DashboardActivity</string>
     <string name="userAlreadyExistError">An account with this phone number already exist</string>
     <string name="userSuccessfullyAdded">Account successfully created</string>
+    <string name="title_activity_login2">LoginActivity2</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="noAccountTextView">Don\'t have an account? click here</string>
+    <string name="register">REGISTER</string>
+    <string name="phone_number">PHONE NUMBER</string>
+    <string name="nric">NRIC</string>
+    <string name="full_name">FULL NAME</string>
+    <string name="have_an_account_sign_in">Have an account? sign in</string>
+    <string name="registerTextView">REGISTER</string>
+    <string name="registerButtonName">Register</string>
 </resources>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "113279788312",
+    "firebase_url": "https://abbis-fff25.firebaseio.com",
+    "project_id": "abbis-fff25",
+    "storage_bucket": "abbis-fff25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113279788312:android:1b3a68de7316449040aa6d",
+        "android_client_info": {
+          "package_name": "com.example.blooddonation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113279788312-f3lqt6qnnpql7i994it90iinc8h0ofut.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.blooddonation",
+            "certificate_hash": "35833c85128b696576ad18f23c459adc976d5d6f"
+          }
+        },
+        {
+          "client_id": "113279788312-7iifhl1b8ljrq6hjpkcg3k7i8tlu7vtt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_WpSXA3Lp50haJvMwIm8e8d5ZBFBFEkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113279788312-7iifhl1b8ljrq6hjpkcg3k7i8tlu7vtt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

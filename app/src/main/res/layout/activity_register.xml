@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="@color/red"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="36dp"
+            android:textStyle="bold"
+            android:text="REGISTER"
+            />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/personalDetailsCard"
+        style="@style/centreLocatorCardDesign"
+        android:focusableInTouchMode="false"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="100dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            android:padding="15dp"
+            android:focusableInTouchMode="false"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:layout_below="@+id/LoginTextView"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/red"
+                android:hint="@string/emailAddressEditTextHint"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/red"
+                android:textColorHighlight="#F3EDED"
+                android:textColorHint="@color/red"
+                android:textColorLink="#FFFFFF"
+                android:theme="@style/EditTextHint" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/emailAddress"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/red"
+                android:hint="@string/passwordEditTextHint"
+                android:inputType="textPassword"
+                android:textColor="@color/red"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="@color/red"
+                android:textColorLink="#FFFFFF"
+                android:theme="@style/EditTextHint" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/password"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/red"
+                android:hint="FULL NAME"
+                android:inputType="text"
+                android:textColor="@color/red"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="@color/red"
+                android:textColorLink="#FFFFFF"
+                android:theme="@style/EditTextHint" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/icNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fullname"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/red"
+                android:hint="NRIC"
+                android:inputType="number"
+                android:textColor="@color/red"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="@color/red"
+                android:textColorLink="#FFFFFF"
+                android:theme="@style/EditTextHint" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icNumber"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/red"
+                android:hint="@string/phone_number"
+                android:inputType="number"
+                android:textColor="@color/red"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="@color/red"
+                android:textColorLink="#FFFFFF"
+                android:theme="@style/EditTextHint" />
+
+            <Button
+                android:id="@+id/registerButton"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="49dp"
+                android:background="@drawable/radius_border_button"
+                android:onClick="registerValidation"
+                android:text="Register"
+                android:textColor="@drawable/radius_border_button_text"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorLink="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/haveAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/registerButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:onClick="loginPage"
+                android:text="Have an account? sign in" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+<!--    <include-->
+<!--        layout="@layout/activity_register_form" />-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
