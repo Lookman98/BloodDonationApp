@@ -4,20 +4,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeFragment"
-    android:background="@color/white">
+    android:background="@drawable/background"
+    tools:context=".ui.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/vCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:padding="40sp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="10dp"
+        style="@style/CardDesign">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10sp"
+            android:paddingLeft="15sp"
+            android:paddingRight="15sp"
+            android:paddingBottom="10sp"
+            >
+
+            <TextView
+                android:id="@+id/blood_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="60sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/donor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/blood_type"
+                android:layout_marginTop="15sp"
+                android:textSize="14sp"
+                android:elevation="10sp"/>
+
+            <TextView
+                android:id="@+id/donor_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/donor_name"
+                android:layout_marginTop="7sp"
+                android:textSize="14sp"
+                android:elevation="10sp"/>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/donationTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="HOME"
-        android:textColor="@color/black"
-      />
+        android:layout_marginTop="30sp"
+        android:layout_below="@+id/vCard"
+        android:textSize="18dp"
+        android:gravity="center_horizontal"
+        android:text="DONATION HISTORY"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/donationTextView"
+        android:layout_marginTop="10sp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:padding="40sp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="10dp"
+        style="@style/CardDesign">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/historyRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="335dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
+
+
 
 </ScrollView>

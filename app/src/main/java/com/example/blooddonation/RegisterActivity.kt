@@ -11,10 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_login.emailAddress
-import kotlinx.android.synthetic.main.activity_login.password
 import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.activity_register_form.*
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -24,51 +21,92 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         auth = FirebaseAuth.getInstance()
+
+        if(auth.currentUser != null ){
+            val backToLogin = Intent(this, MainActivity::class.java)
+            startActivity(backToLogin)
+            finish()
+        }
     }
 
     fun registerValidation(view: View) {
-        val email = emailAddress.text.toString()
-        val password = password.text.toString()
+        val email = emailAddressRegister.text.toString()
+        val password = passwordRegister.text.toString()
         val fullname = fullname.text.toString()
         val nric = icNumber.text.toString()
         val phoneNo =  phoneNumber.text.toString()
-//        val address1 = address1.text.toString()
-//        val address2 = address2.text.toString()
-//        val postcode = postcode.text.toString()
 
-        auth.createUserWithEmailAndPassword(email,password)
-                .addOnSuccessListener { result ->
-                    val changeRequest = UserProfileChangeRequest.Builder()
-                            .setDisplayName(fullname)
-                            .build()
-                    result.user?.updateProfile(changeRequest)
-                        ?.addOnFailureListener{ exception ->
-                            Toast.makeText(this, "Could not update fullname: ${exception.message}", Toast.LENGTH_LONG).show()
-                        }
-                    Toast.makeText(this, "Success Registered As User", Toast.LENGTH_LONG).show()
-                    val data = HashMap<String , Any>()
-                    data.put(FULLNAME,fullname)
-                    data.put(NRIC,nric)
-                    data.put(PHONENUMBER,phoneNo)
-//                    data.put(ADDRESS1,phoneNo)
-//                    data.put(ADDRESS2,phoneNo)
-//                    data.put(POSTCODE,phoneNo)
-                    data.put(DATE_CREATED,FieldValue.serverTimestamp())
+        if(fieldEmptyCheck(email,password,fullname,nric,phoneNo)){
 
-                    FirebaseFirestore.getInstance().collection("donor").document(nric)
-                            .set(data)
-                            .addOnSuccessListener {
-                                val loginPage = Intent(this,LoginActivity::class.java)
-                                startActivity(loginPage)
-                                finish()
-                            }
-                            .addOnFailureListener{exception ->
-                                Toast.makeText(this, "Could not register user : ${exception.message}", Toast.LENGTH_LONG).show()
-                            }
-                }
-                .addOnFailureListener {exception ->
-                    Toast.makeText(this, "Could not create user: ${exception.message}", Toast.LENGTH_LONG).show()
-                }
+            auth.createUserWithEmailAndPassword(email,password)
+                    .addOnSuccessListener { result ->
+                        val changeRequest = UserProfileChangeRequest.Builder()
+                                .setDisplayName(fullname)
+                                .build()
+                        result.user!!.updateProfile(changeRequest)
+                                .addOnFailureListener{ exception ->
+                                    Toast.makeText(this, "Could not update fullname: ${exception.message}", Toast.LENGTH_LONG).show()
+                                }
+
+                        val data = HashMap<String , Any>()
+                        data.put(FULLNAME,fullname)
+                        data.put(NRIC,nric)
+                        data.put(PHONENUMBER,phoneNo)
+                        data.put(DATE_CREATED,FieldValue.serverTimestamp())
+
+                        FirebaseFirestore.getInstance().collection("donor").document(result.user!!.uid)
+                                .set(data)
+                                .addOnSuccessListener {
+                                    Toast.makeText(this,"Register Success",Toast.LENGTH_LONG).show()
+                                    val intent = Intent(this,LoginActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+                                .addOnFailureListener{exception ->
+                                    Toast.makeText(this, "Could not register user : ${exception.message}", Toast.LENGTH_LONG).show()
+                                }
+                    }
+                    .addOnFailureListener {exception ->
+                        Toast.makeText(this, "Could not register user: ${exception.message}", Toast.LENGTH_LONG).show()
+                    }
+
+        }//field empty validate
+
+
+    }//function registerValidate
+
+    private fun fieldEmptyCheck(email: String, password: String, fullname: String, nric: String, phoneNo: String): Boolean {
+
+        if(email.isEmpty()) {
+            displayError("Enter Email")
+            return false
+        }
+
+        if(password.isEmpty()) {
+            displayError("Enter Password")
+            return false
+        }
+
+        if(fullname.isEmpty()) {
+            displayError("Enter Fullname")
+            return false
+        }
+
+        if(nric.isEmpty()) {
+            displayError("Enter Ic Number")
+            return false
+        }
+
+        if(phoneNo.isEmpty()) {
+            displayError("Enter Phone Number")
+            return false
+        }
+
+        return true
+    }
+
+    private fun displayError(error: String) {
+        Toast.makeText(this,"${error}",Toast.LENGTH_LONG).show()
     }
 
     fun loginPage(view: View) {
@@ -77,6 +115,8 @@ class RegisterActivity : AppCompatActivity() {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             startActivity(loginPage,ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }
+
+
 
     }
 }

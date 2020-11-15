@@ -12,13 +12,18 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.budiyev.android.codescanner.*
+import com.example.blooddonation.LoginActivity
 import com.example.blooddonation.MainActivity
 import com.example.blooddonation.R
+import com.google.firebase.auth.FirebaseAuth
 
 class DonateFragment : Fragment() {
 
     private lateinit var codeScanner: CodeScanner
     val CAMERA_PERMISSION_REQUEST = 111;
+
+    val auth =  FirebaseAuth.getInstance()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,6 +36,14 @@ class DonateFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+
+        //check user credential
+        if(auth.currentUser == null ){
+            val backToLogin = Intent(activity, LoginActivity::class.java)
+            startActivity(backToLogin)
+        }
+
         val scannerView = view.findViewById<CodeScannerView>(R.id.scannerView)
         val activity = requireActivity()
         codeScanner = CodeScanner(activity, scannerView)

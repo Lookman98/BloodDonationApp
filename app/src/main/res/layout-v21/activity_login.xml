@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="LoginActivity"
-    android:background="@drawable/background"
+    android:background="@drawable/registerloginbackground"
     android:fitsSystemWindows="true"
     android:focusableInTouchMode="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="130dp"
         android:layout_gravity="center_horizontal"
+        android:paddingTop="30dp"
 
         >
 
-        <TextView
+        <ImageView
             android:id="@+id/LoginTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:gravity="center_horizontal"
-            android:textColor="@color/white"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:text="@string/loginButtonName"
+            android:src="@drawable/blood"
             />
     </RelativeLayout>
 
@@ -50,7 +49,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailAddress"
+                android:id="@+id/emailAddressLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="34dp"
@@ -64,7 +63,7 @@
                 android:theme="@style/EditTextHint" />
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password"
+                android:id="@+id/passwordLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -87,6 +86,19 @@
                 android:onClick="loginValidation"
                 android:text="@string/loginButtonName"
                 android:textColor="@drawable/radius_border_button_text"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorLink="#FFFFFF" />
+
+            <Button
+                android:id="@+id/fingerprintLogin"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/fingerprint_radius_button"
+                android:onClick="fingerprintLogin"
+                android:text="@string/fingerprint_login"
+                android:textColor="@drawable/fingerprint_text_button"
                 android:textColorHighlight="#FFFFFF"
                 android:textColorLink="#FFFFFF" />
 

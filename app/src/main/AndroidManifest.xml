@@ -3,6 +3,7 @@
     package="com.example.blooddonation">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
 
     <uses-feature
         android:name="android.hardware.camera"

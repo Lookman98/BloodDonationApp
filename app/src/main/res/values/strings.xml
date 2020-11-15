@@ -54,4 +54,5 @@
     <string name="have_an_account_sign_in">Have an account? sign in</string>
     <string name="registerTextView">REGISTER</string>
     <string name="registerButtonName">Register</string>
+    <string name="fingerprint_login">Fingerprint Login</string>
 </resources>

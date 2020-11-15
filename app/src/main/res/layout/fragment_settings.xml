@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/background"
     tools:context=".ui.SettingsFragment">
 
     <TextView
@@ -18,4 +18,14 @@
         android:textSize="20sp"
         android:text="SETTINGS"
         android:textColor="@color/black"/>
+
+
+    <Button
+        android:id="@+id/signout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_notifications"
+        android:text="SIGN OUT"
+    />
+
 </RelativeLayout>

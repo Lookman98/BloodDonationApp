@@ -16,3 +16,12 @@ const val BLOODGROUP = "donor_bloodgroup"
 const val RHESUS = "donor_rhesus"
 const val UID = "uid"
 const val DATE_CREATED = "dateCreated"
+
+
+//donation history
+const val D_DATE = "donation_date"
+const val D_TIME = "donation_time"
+const val D_NOTE = "donation_type"
+
+//collection Reference
+const val DONATION = "donation"
