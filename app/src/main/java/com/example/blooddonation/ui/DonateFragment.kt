@@ -15,6 +15,8 @@ import com.budiyev.android.codescanner.*
 import com.example.blooddonation.LoginActivity
 import com.example.blooddonation.MainActivity
 import com.example.blooddonation.R
+import com.example.blooddonation.donationform.DonationFormPart1
+import com.example.blooddonation.donationform.saveAnswer
 import com.google.firebase.auth.FirebaseAuth
 
 class DonateFragment : Fragment() {
@@ -56,10 +58,14 @@ class DonateFragment : Fragment() {
 
         codeScanner.decodeCallback = DecodeCallback {
             activity.runOnUiThread {
-                Toast.makeText(activity,"You have registered for ${it.text} campaign",Toast.LENGTH_LONG).show()
-                Toast.makeText(activity,"Thank You for the donation, You have save someone life",Toast.LENGTH_LONG).show()
+                //save result from qrCode Scan
+                saveAnswer.campaignID = it.text;
+                //link to DonationForm page
+                val questionForm = Intent(activity, DonationFormPart1::class.java)
+                startActivity(questionForm)
+
             }
-         val intent = Intent()
+            val intent = Intent()
             intent.setClass(activity,MainActivity::class.java)
             startActivity(intent)
         }

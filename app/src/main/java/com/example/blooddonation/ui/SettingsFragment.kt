@@ -5,12 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.example.blooddonation.LoginActivity
 import com.example.blooddonation.R
+import com.example.blooddonation.UserData
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_settings.*
 
@@ -35,6 +33,7 @@ class SettingsFragment : Fragment() {
         }
 
         signout.setOnClickListener {
+            UserData.isVerify = false
             auth.signOut()
             startActivity(Intent(activity,LoginActivity::class.java))
 
@@ -44,7 +43,6 @@ class SettingsFragment : Fragment() {
 
     override fun onStop() {
         super.onStop()
-
     }
 
 }

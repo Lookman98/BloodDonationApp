@@ -89,18 +89,18 @@
                 android:textColorHighlight="#FFFFFF"
                 android:textColorLink="#FFFFFF" />
 
-            <Button
-                android:id="@+id/fingerprintLogin"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/fingerprint_radius_button"
-                android:onClick="fingerprintLogin"
-                android:text="@string/fingerprint_login"
-                android:textColor="@drawable/fingerprint_text_button"
-                android:textColorHighlight="#FFFFFF"
-                android:textColorLink="#FFFFFF" />
+<!--            <Button-->
+<!--                android:id="@+id/fingerprintLogin"-->
+<!--                style="?android:attr/borderlessButtonStyle"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/fingerprint_radius_button"-->
+<!--                android:onClick="fingerprintLogin"-->
+<!--                android:text="@string/fingerprint_login"-->
+<!--                android:textColor="@drawable/fingerprint_text_button"-->
+<!--                android:textColorHighlight="#FFFFFF"-->
+<!--                android:textColorLink="#FFFFFF" />-->
 
             <TextView
                 android:id="@+id/registerPage"

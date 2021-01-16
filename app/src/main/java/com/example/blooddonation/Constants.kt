@@ -22,6 +22,6 @@ const val DATE_CREATED = "dateCreated"
 const val D_DATE = "donation_date"
 const val D_TIME = "donation_time"
 const val D_NOTE = "donation_type"
-
+const val D_IC = "donor_ic"
 //collection Reference
 const val DONATION = "donation"

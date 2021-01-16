@@ -2,11 +2,10 @@ package com.example.blooddonation
 
 import android.app.ActivityOptions
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.firestore.FieldValue
@@ -53,6 +52,7 @@ class RegisterActivity : AppCompatActivity() {
                         data.put(NRIC,nric)
                         data.put(PHONENUMBER,phoneNo)
                         data.put(DATE_CREATED,FieldValue.serverTimestamp())
+                        data.put("uid",result.user!!.uid)
 
                         FirebaseFirestore.getInstance().collection("donor").document(result.user!!.uid)
                                 .set(data)

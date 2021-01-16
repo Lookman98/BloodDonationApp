@@ -60,7 +60,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
 
     //multidex
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:multidex:2.0.1'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

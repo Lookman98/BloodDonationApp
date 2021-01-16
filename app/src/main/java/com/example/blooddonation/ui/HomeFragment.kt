@@ -1,32 +1,26 @@
 package com.example.blooddonation.ui
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.blooddonation.*
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.EventListener
-
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.auth.User
+import com.google.firebase.firestore.ListenerRegistration
 import kotlinx.android.synthetic.main.fragment_home.*
 
- class HomeFragment : Fragment() {
+class HomeFragment : Fragment() {
 
     lateinit var historyAdapter: DonationHistoryAdapter
     val donationhistory = arrayListOf<DonationHistoryModel>()
     val donationCollectionRef =  FirebaseFirestore.getInstance()
-                                 .collection(DONATION)
+                                 .collection(DONATION).whereEqualTo("donation_status","approve")
+    lateinit var donationHistoryListener: ListenerRegistration
 
     val auth = FirebaseAuth.getInstance()
     val userDataRef = FirebaseFirestore.getInstance().collection("donor")
@@ -41,6 +35,8 @@ import kotlinx.android.synthetic.main.fragment_home.*
         return homeView
     }
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 
@@ -50,15 +46,23 @@ import kotlinx.android.synthetic.main.fragment_home.*
                 startActivity(backToLogin)
         }
 
-        val UserID = auth.currentUser!!.uid
+        val userID = auth.currentUser!!.uid
 
-        userDataRef.document(UserID).addSnapshotListener { snapshot, error ->
-            blood_type.setText(snapshot?.getString("donor_bloodType"))
-            donor_ic.setText(snapshot?.getString("donor_ic"))
-            donor_name.setText(snapshot?.getString("donor_name")?.toUpperCase())
+        userDataRef.document(userID).addSnapshotListener { snapshot, error ->
+            var bloodType = snapshot?.getString("donor_bloodType")
+            var ic = snapshot?.getString("donor_ic")
+            var name = snapshot?.getString("donor_name")?.toUpperCase()
+
+            UserData.Name = name.toString()
+            UserData.bloodType = bloodType.toString()
+            UserData.ic = ic.toString()
+
+            blood_type.text = UserData.bloodType
+            donor_ic.text = UserData.ic
+            donor_name.text = UserData.Name
 
             if(error != null)
-                 Toast.makeText(activity,"${error?.localizedMessage}",Toast.LENGTH_LONG).show()
+                 Toast.makeText(activity,"ERROR: ${error?.localizedMessage}",Toast.LENGTH_LONG).show()
         }
 
 
@@ -67,28 +71,54 @@ import kotlinx.android.synthetic.main.fragment_home.*
         val layoutManager = LinearLayoutManager(activity)
         historyRecycleView.layoutManager = layoutManager
 
-        donationCollectionRef.get()
-                .addOnSuccessListener {snapshot ->
-                    for (document in snapshot.documents){
-                        val data = document.data
-                        val date = data!![D_DATE].toString()
-                        val time = data!![D_TIME].toString()
-                        val type = data!![D_NOTE].toString()
-                        val id = document.id
-
-                        val newHistory = DonationHistoryModel(date,time,type,id)
-                        donationhistory.add(newHistory)
-                    }
-                    historyAdapter.notifyDataSetChanged()
-
-                }.addOnFailureListener {exception ->
-                    Toast.makeText(activity,"${exception}", Toast.LENGTH_LONG).show()
-                }
-
+        setListener()
     }
+
+     override fun onResume() {
+         super.onResume()
+         setListener()
+
+     }
+
+     override fun onStart() {
+         super.onStart()
+         setListener()
+     }
+
+
+     fun setListener(){
+         donationHistoryListener = donationCollectionRef
+                 .whereEqualTo(D_IC,UserData.ic)
+                 .addSnapshotListener{snapshot,exception ->
+
+             if(exception != null){
+                 Toast.makeText(activity,"${exception.localizedMessage}",Toast.LENGTH_LONG).show()
+             }
+
+             if(snapshot != null){
+                donationhistory.clear()
+
+                 for (document in snapshot.documents){
+                     val data = document.data
+                     val date = data!![D_DATE].toString()
+                     val time = data!![D_TIME].toString()
+                     val type = data!![D_NOTE].toString()
+                     val id = document.id
+
+
+                     val newHistory = DonationHistoryModel(date,time,type,id)
+                     donationhistory.add(newHistory)
+
+                 }
+                 historyAdapter.notifyDataSetChanged()
+             }
+         }
+     }
 
 
 }
+
+
 
 
 

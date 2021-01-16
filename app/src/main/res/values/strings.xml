@@ -55,4 +55,15 @@
     <string name="registerTextView">REGISTER</string>
     <string name="registerButtonName">Register</string>
     <string name="fingerprint_login">Fingerprint Login</string>
+    <string name="_12_female_donors_only"><u>12. Female Donors Only:</u></string>
+    <string name="_15_you_should_never_give_blood_if">15. You should <b>NEVER GIVE BLOOD IF</b>:</string>
+    <string name="fifteenBulletPoint">
+        <li> you and your partner are HIV positive\n</li>
+        <li> you are man who has had sex with another man\n</li>
+        <li> you have multiple sex partners\n</li>
+        <li> you have ever worked as a prostitute\n</li>
+        <li> you have ever injected yourslef, even once, with drugs (including body building drugs)\n</li>
+        <li> you have had sex with prostitute</li>
+    </string>
+    <string name="please_fill_this_section_by_choose_the_correct_answer">Please fill this section by choose the correct answer</string>
 </resources>

@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/form1Card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:padding="5sp"
+        android:paddingBottom="20dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="10dp"
+        style="@style/CardDesign">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10sp"
+        android:paddingBottom="35dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/instruction"
+            android:layout_width="271dp"
+            android:layout_height="44dp"
+            android:text="@string/please_fill_this_section_by_choose_the_correct_answer"
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteY="16dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10sp"/>
+
+        <TextView
+            android:id="@+id/one"
+            android:layout_width="190dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="72dp"
+            android:textColor="@color/black"
+            android:text="1. Do you feel well today?"
+            tools:layout_editor_absoluteY="59dp" />
+
+        <RadioGroup
+            android:id="@+id/oneRadio"
+            android:layout_width="116dp"
+            android:layout_height="42dp"
+            android:orientation="horizontal"
+            android:showDividers="beginning|middle|end"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="278dp"
+            tools:layout_editor_absoluteY="49dp">
+
+            <RadioButton
+                android:id="@+id/oneNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="Yes"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="278dp"
+                tools:layout_editor_absoluteY="59dp" />
+
+            <RadioButton
+                android:id="@+id/oneYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="341dp"
+                tools:layout_editor_absoluteY="59dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/two"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:backgroundTint="@color/red"
+            android:text="2. Did you have any problems during previous blood donations?"
+            android:textColor="@color/black"
+
+            tools:layout_editor_absoluteY="92dp" />
+
+        <RadioGroup
+            android:id="@+id/twoRadio"
+            android:layout_width="116dp"
+            android:layout_height="42dp"
+            android:orientation="horizontal"
+            android:showDividers="beginning|middle|end"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="278dp"
+            tools:layout_editor_absoluteY="91dp">
+
+            <RadioButton
+                android:id="@+id/twoYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="Yes"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="278dp"
+                tools:layout_editor_absoluteY="59dp" />
+
+            <RadioButton
+                android:id="@+id/twoNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="341dp"
+                tools:layout_editor_absoluteY="59dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/three"
+            android:layout_width="284dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:text="3. Have you ever been deferred from donation before?"
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteY="132dp" />
+
+
+        <RadioGroup
+            android:id="@+id/threeRadio"
+            android:layout_width="116dp"
+            android:layout_height="42dp"
+            android:orientation="horizontal"
+            android:showDividers="beginning|middle|end"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="278dp"
+            tools:layout_editor_absoluteY="132dp">
+
+            <RadioButton
+                android:id="@+id/threeYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="Yes"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="278dp"
+                tools:layout_editor_absoluteY="59dp" />
+
+            <RadioButton
+                android:id="@+id/threeNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="341dp"
+                tools:layout_editor_absoluteY="59dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/four"
+            android:layout_width="285dp"
+            android:layout_height="29dp"
+            android:text="4. In the past week, have you:"
+            android:textColor="@color/black" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:layout_marginLeft="15dp"
+          >
+
+          <TextView
+              android:id="@+id/fourA"
+              android:layout_width="225dp"
+              android:layout_height="26dp"
+              android:text="a) Taken any aspirin?"
+              android:textColor="@color/black"/>
+
+          <RadioGroup
+              android:id="@+id/fourARadio"
+              android:layout_width="116dp"
+              android:layout_height="42dp"
+              android:orientation="horizontal"
+              android:showDividers="beginning|middle|end"
+              tools:ignore="MissingConstraints"
+              tools:layout_editor_absoluteX="278dp"
+              tools:layout_editor_absoluteY="212dp">
+
+              <RadioButton
+                  android:id="@+id/fourAYes"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Yes"
+                  tools:ignore="MissingConstraints"
+                  tools:layout_editor_absoluteX="278dp"
+                  tools:layout_editor_absoluteY="59dp" />
+
+              <RadioButton
+                  android:id="@+id/fourANo"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="No"
+                  tools:ignore="MissingConstraints"
+                  tools:layout_editor_absoluteX="341dp"
+                  tools:layout_editor_absoluteY="59dp" />
+          </RadioGroup>
+
+          <TextView
+              android:id="@+id/fourB"
+              android:layout_width="259dp"
+              android:layout_height="wrap_content"
+              android:text="b) Taken any other medication other than aspirin? if yes, please specify:"
+              android:textColor="@color/black" />
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/fourBInput"
+              android:layout_width="242dp"
+              android:layout_height="wrap_content"
+              android:hint="Specify here"
+              android:textColor="@color/black"
+
+              />
+
+          <RadioGroup
+              android:id="@+id/fourBradio"
+              android:layout_width="116dp"
+              android:layout_height="42dp"
+              android:orientation="horizontal"
+              android:showDividers="beginning|middle|end"
+              tools:ignore="MissingConstraints"
+              tools:layout_editor_absoluteX="278dp"
+              tools:layout_editor_absoluteY="254dp">
+
+              <RadioButton
+                  android:id="@+id/fourBYes"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:paddingRight="5dp"
+                  android:text="Yes"
+                  tools:ignore="MissingConstraints"
+                  tools:layout_editor_absoluteX="278dp"
+                  tools:layout_editor_absoluteY="59dp" />
+
+              <RadioButton
+                  android:id="@+id/fourBNo"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="No"
+                  tools:ignore="MissingConstraints"
+                  tools:layout_editor_absoluteX="341dp"
+                  tools:layout_editor_absoluteY="59dp" />
+          </RadioGroup>
+
+
+          <TextView
+              android:id="@+id/fourC"
+              android:layout_width="242dp"
+              android:layout_height="25dp"
+              android:text="c) had any cough or cold or migraine?"
+              android:textColor="@color/black"
+              />
+
+          <RadioGroup
+              android:id="@+id/fourCradio"
+              android:layout_width="116dp"
+              android:layout_height="42dp"
+              android:orientation="horizontal"
+              android:showDividers="beginning|middle|end"
+              tools:ignore="MissingConstraints"
+              tools:layout_editor_absoluteX="278dp"
+              tools:layout_editor_absoluteY="325dp">
+
+              <RadioButton
+                  android:id="@+id/fourCYes"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:paddingRight="5dp"
+                  android:text="Yes"
+                  tools:ignore="MissingConstraints"
+                  tools:layout_editor_absoluteX="278dp"
+                  tools:layout_editor_absoluteY="59dp" />
+
+              <RadioButton
+                  android:id="@+id/fourCNo"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="No"
+                  tools:ignore="MissingConstraints"
+                  tools:layout_editor_absoluteX="341dp"
+                  tools:layout_editor_absoluteY="59dp" />
+          </RadioGroup>
+
+          <TextView
+              android:id="@+id/fourD"
+              android:layout_width="283dp"
+              android:layout_height="wrap_content"
+              android:text="d) had any other illnesses? if yes, please specify:"
+              android:textColor="@color/black" />
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/fourDInput"
+              android:layout_width="242dp"
+              android:layout_height="wrap_content"
+              android:hint="Specify here" />
+
+          <RadioGroup
+              android:id="@+id/fourDradio"
+              android:layout_width="116dp"
+              android:layout_height="42dp"
+              android:orientation="horizontal"
+              android:showDividers="beginning|middle|end"
+              tools:ignore="MissingConstraints"
+              tools:layout_editor_absoluteX="278dp"
+              tools:layout_editor_absoluteY="377dp">
+
+              <RadioButton
+                  android:id="@+id/fourDYes"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:paddingRight="5dp"
+                  android:text="Yes"
+                  tools:ignore="MissingConstraints"
+                  tools:layout_editor_absoluteX="278dp"
+                  tools:layout_editor_absoluteY="59dp" />
+
+              <RadioButton
+                  android:id="@+id/fourDNo"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="No"
+                  tools:ignore="MissingConstraints"
+                  tools:layout_editor_absoluteX="341dp"
+                  tools:layout_editor_absoluteY="59dp" />
+          </RadioGroup>
+
+      </LinearLayout>
+
+        <TextView
+            android:id="@+id/five"
+            android:layout_width="309dp"
+            android:layout_height="wrap_content"
+            android:text="5. Have you had any vaccination or injection within the last 3 weeks?"
+            android:textColor="@color/black" />
+
+        <RadioGroup
+            android:id="@+id/fiveRadio"
+            android:layout_width="116dp"
+            android:layout_height="42dp"
+            android:orientation="horizontal"
+            android:showDividers="beginning|middle|end"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="278dp"
+            tools:layout_editor_absoluteY="457dp">
+
+            <RadioButton
+                android:id="@+id/fiveYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="Yes"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="278dp"
+                tools:layout_editor_absoluteY="59dp" />
+
+            <RadioButton
+                android:id="@+id/fiveNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="341dp"
+                tools:layout_editor_absoluteY="59dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/six"
+            android:layout_width="269dp"
+            android:layout_height="wrap_content"
+            android:text="6. Have you had any dental treatment in the past 24 hours?"
+            android:textColor="@color/black" />
+
+        <RadioGroup
+            android:id="@+id/sixRadio"
+            android:layout_width="116dp"
+            android:layout_height="42dp"
+            android:orientation="horizontal"
+            android:showDividers="beginning|middle|end"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="278dp"
+            tools:layout_editor_absoluteY="506dp">
+
+            <RadioButton
+                android:id="@+id/sixYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="Yes"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="278dp"
+                tools:layout_editor_absoluteY="59dp" />
+
+            <RadioButton
+                android:id="@+id/sixNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="341dp"
+                tools:layout_editor_absoluteY="59dp" />
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/seven"
+            android:layout_width="289dp"
+            android:layout_height="wrap_content"
+            android:text="7. Have you had any tattoes/acupunture/ear-piercing in the last 1 year?"
+            android:textColor="@color/black" />
+
+        <RadioGroup
+            android:id="@+id/sevenRadio"
+            android:layout_width="116dp"
+            android:layout_height="42dp"
+            android:orientation="horizontal"
+            android:showDividers="beginning|middle|end"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="278dp"
+            tools:layout_editor_absoluteY="548dp">
+
+            <RadioButton
+                android:id="@+id/sevenYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="Yes"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="278dp"
+                tools:layout_editor_absoluteY="59dp" />
+
+            <RadioButton
+                android:id="@+id/sevenNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="341dp"
+                tools:layout_editor_absoluteY="59dp" />
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/eight"
+            android:layout_width="315dp"
+            android:layout_height="64dp"
+            android:text="8. Have you had any treatment recently at any clinic or hospital? if yes, please specify type of illness and treatment received:"
+            android:textColor="@color/black" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/eightInput"
+            android:layout_width="242dp"
+            android:layout_height="43dp"
+            android:hint="Specify here"
+            android:textColor="@color/black"
+           />
+
+        <RadioGroup
+            android:id="@+id/eightradio"
+            android:layout_width="116dp"
+            android:layout_height="42dp"
+            android:orientation="horizontal"
+            android:showDividers="beginning|middle|end"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="278dp"
+            tools:layout_editor_absoluteY="624dp">
+
+            <RadioButton
+                android:id="@+id/eightYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="Yes"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="278dp"
+                tools:layout_editor_absoluteY="59dp" />
+
+            <RadioButton
+                android:id="@+id/eightNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="341dp"
+                tools:layout_editor_absoluteY="59dp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1/3 Next"
+            android:onClick="nextToForm2"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</ScrollView>

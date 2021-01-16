@@ -18,11 +18,11 @@ import androidx.core.app.ActivityCompat
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
-/*************************************************/
 
 class LoginActivity: AppCompatActivity(){
 
     lateinit var auth: FirebaseAuth
+    val auths = FirebaseAuth.getInstance()
 
     private var cancellationSignal: CancellationSignal? = null
 
@@ -33,34 +33,22 @@ class LoginActivity: AppCompatActivity(){
 
             override fun onAuthenticationError(errorCode: Int, errString: CharSequence?) {
                 super.onAuthenticationError(errorCode, errString)
-                notifyUser("Authentication Error: ${errString}")
+                notifyUser("$errString")
             }
 
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
                 super.onAuthenticationSucceeded(result)
 
-                val email = emailAddressLogin.text.toString()
-                val password = passwordLogin.text.toString()
-                if(checkEmptyField(email,password)){
-
-                    auth.signInWithEmailAndPassword(email,password)
-                        .addOnSuccessListener {
-                            val home = Intent(this@LoginActivity, MainActivity::class.java)
-                            startActivity(home);
-                            finish()
-                        }.addOnFailureListener{exception ->
-                            Toast.makeText(this@LoginActivity,"${exception.localizedMessage}",Toast.LENGTH_LONG).show()
-                        }
-                }
-//                notifyUser("Authentication success!")
-//                startActivity(Intent(this@LoginActivity,MainActivity::class.java))
-//                finish()
+                val home = Intent(this@LoginActivity, MainActivity::class.java)
+                startActivity(home);
+                finish()
             }
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
         auth = FirebaseAuth.getInstance()
 
         if(auth.currentUser != null ){
@@ -69,12 +57,14 @@ class LoginActivity: AppCompatActivity(){
             finish()
         }
 
-        checkBioMetricSupport()
 
-        
+
     }
 
+
+
     //check login credential
+
     fun loginValidation(view: View) {
 
         val email = emailAddressLogin.text.toString()
@@ -83,9 +73,18 @@ class LoginActivity: AppCompatActivity(){
 
             auth.signInWithEmailAndPassword(email,password)
                     .addOnSuccessListener {
-                        val home = Intent(this, MainActivity::class.java)
-                        startActivity(home);
-                        finish()
+                        if(checkBioMetricSupport()){
+                            callBioMetric()
+                        }
+
+                        if(!checkBioMetricSupport()){
+
+                            val home = Intent(this@LoginActivity, MainActivity::class.java)
+                            startActivity(home);
+                            finish()
+                        }
+
+
                     }.addOnFailureListener{exception ->
                         Toast.makeText(this,"${exception.localizedMessage}",Toast.LENGTH_LONG).show()
                     }
@@ -101,21 +100,23 @@ class LoginActivity: AppCompatActivity(){
     }
 
     fun fingerprintLogin(view: View) {
-
-        val biometricPrompt: BiometricPrompt = BiometricPrompt.Builder(this)
-                .setTitle("Fingperint Login")
-                .setNegativeButton("Cancel", this.mainExecutor, DialogInterface.OnClickListener{
-                    dialog, which ->
-                    notifyUser("Authentication Cancelled")
-                }).build()
-
-        biometricPrompt.authenticate(getcancellationSignal(), mainExecutor, authenticationCallback)
+//
+//        val biometricPrompt: BiometricPrompt = BiometricPrompt.Builder(this)
+//                .setTitle("Fingperint Login")
+//                .setNegativeButton("Cancel", this.mainExecutor, DialogInterface.OnClickListener{
+//                    dialog, which ->
+//                    notifyUser("Authentication Cancelled")
+//                }).build()
+//
+//        biometricPrompt.authenticate(getcancellationSignal(), mainExecutor, authenticationCallback)
     }
 
     private fun getcancellationSignal(): CancellationSignal{
         cancellationSignal = CancellationSignal()
         cancellationSignal?.setOnCancelListener{
-            notifyUser("Authentication was cancelled by the user")
+            val backToLogin = Intent(this, LoginActivity::class.java)
+            startActivity(backToLogin)
+            finish()
         }
         return cancellationSignal as CancellationSignal
     }
@@ -138,13 +139,20 @@ class LoginActivity: AppCompatActivity(){
 
         }
 
-        return  if(packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)){
-            return true
-        }else{
-            return true
-        }
+        return packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)
     }
 
+    private fun callBioMetric(){
+        val biometricPrompt: BiometricPrompt = BiometricPrompt.Builder(this)
+                .setTitle("Fingerprint Login"
+                )
+                .setNegativeButton("Cancel", this.mainExecutor, DialogInterface.OnClickListener {
+                    dialog, which ->
+                    notifyUser("Authentication Cancelled")
+                }).build()
+
+        biometricPrompt.authenticate(getcancellationSignal(), mainExecutor, authenticationCallback)
+    }
 
     //check empty field
     private fun checkEmptyField(email: String, password: String): Boolean {

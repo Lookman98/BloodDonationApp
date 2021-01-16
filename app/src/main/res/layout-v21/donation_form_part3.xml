@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+   >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/form1Card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30sp"
+        android:padding="5sp"
+        android:paddingBottom="20dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="10dp"
+        style="@style/CardDesign">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10sp"
+        android:paddingBottom="35dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/fourteen"
+            android:layout_width="285dp"
+            android:layout_height="21dp"
+            android:text="14. Have you ever received:"
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="2dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20sp">
+
+
+                <TextView
+                    android:id="@+id/fourteenA"
+                    android:layout_width="225dp"
+                    android:layout_height="21dp"
+                    android:text="a) treatment with human growth hormone?"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/fourteenARadio"
+                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="34dp"
+                    tools:ignore="MissingConstraints" />
+
+                <RadioGroup
+                    android:id="@+id/fourteenARadio"
+                    android:layout_width="116dp"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal"
+                    android:showDividers="beginning|middle|end"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="279dp"
+                    tools:layout_editor_absoluteY="23dp">
+
+                    <RadioButton
+                        android:id="@+id/fourteenAYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:text="Yes"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="278dp"
+                        tools:layout_editor_absoluteY="59dp" />
+
+                    <RadioButton
+                        android:id="@+id/fourteenANo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="341dp"
+                        tools:layout_editor_absoluteY="59dp" />
+                </RadioGroup>
+
+
+                <TextView
+                    android:id="@+id/fourteenB"
+                    android:layout_width="237dp"
+                    android:layout_height="18dp"
+                    android:text="b) cornea transplant?"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/fourteenBradio"
+                    app:layout_constraintHorizontal_bias="0.473"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="74dp" />
+
+                <RadioGroup
+                    android:id="@+id/fourteenBradio"
+                    android:layout_width="116dp"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal"
+                    android:showDividers="beginning|middle|end"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="279dp"
+                    tools:layout_editor_absoluteY="65dp">
+
+                    <RadioButton
+                        android:id="@+id/fourteenBYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:text="Yes"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="278dp"
+                        tools:layout_editor_absoluteY="59dp" />
+
+                    <RadioButton
+                        android:id="@+id/fourteenBNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="341dp"
+                        tools:layout_editor_absoluteY="59dp" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/fourteenC"
+                    android:layout_width="239dp"
+                    android:layout_height="40dp"
+                    android:text="c) transplant of brain membranes (duramater)?"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/fourteenCradio"
+                    app:layout_constraintHorizontal_bias="0.486"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="107dp" />
+
+                <RadioGroup
+                    android:id="@+id/fourteenCradio"
+                    android:layout_width="116dp"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal"
+                    android:showDividers="beginning|middle|end"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="279dp"
+                    tools:layout_editor_absoluteY="107dp">
+
+                    <RadioButton
+                        android:id="@+id/fourteenCYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:text="Yes"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="278dp"
+                        tools:layout_editor_absoluteY="59dp" />
+
+                    <RadioButton
+                        android:id="@+id/fourteenCNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="341dp"
+                        tools:layout_editor_absoluteY="59dp" />
+                </RadioGroup>
+
+    </LinearLayout>
+                <TextView
+                    android:id="@+id/fifteen"
+                    android:layout_width="285dp"
+                    android:layout_height="21dp"
+                    android:text="@string/_15_you_should_never_give_blood_if"
+                    android:textColor="@color/black"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="1dp"
+                    tools:layout_editor_absoluteY="168dp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20sp">
+
+                <TextView
+                    android:id="@+id/fifteenPointA"
+                    android:layout_width="289dp"
+                    android:layout_height="141dp"
+                    android:text="@string/fifteenBulletPoint"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/fifteenA"
+                    android:layout_width="225dp"
+                    android:layout_height="21dp"
+                    android:text="a) are you one of the above?"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/fifteenARadio"
+                    app:layout_constraintHorizontal_bias="0.684"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="355dp" />
+
+                <RadioGroup
+                    android:id="@+id/fifteenARadio"
+                    android:layout_width="116dp"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal"
+                    android:showDividers="beginning|middle|end"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="279dp"
+                    tools:layout_editor_absoluteY="344dp">
+
+                    <RadioButton
+                        android:id="@+id/fifteenAYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:text="Yes"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="278dp"
+                        tools:layout_editor_absoluteY="59dp" />
+
+                    <RadioButton
+                        android:id="@+id/fifteenANo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="341dp"
+                        tools:layout_editor_absoluteY="59dp" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/fifteenB"
+                    android:layout_width="237dp"
+                    android:layout_height="18dp"
+                    android:backgroundTint="@color/red"
+                    android:text="b) are you sex partner of above?"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/fifteenBradio"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="403dp" />
+
+                <RadioGroup
+                    android:id="@+id/fifteenBradio"
+                    android:layout_width="116dp"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal"
+                    android:showDividers="beginning|middle|end"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="279dp"
+                    tools:layout_editor_absoluteY="394dp">
+
+                    <RadioButton
+                        android:id="@+id/fifteenBYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:text="Yes"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="278dp"
+                        tools:layout_editor_absoluteY="59dp" />
+
+                    <RadioButton
+                        android:id="@+id/fifteenBNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="341dp"
+                        tools:layout_editor_absoluteY="59dp" />
+                </RadioGroup>
+
+        </LinearLayout>
+                <TextView
+                    android:id="@+id/sixteen"
+                    android:layout_width="244dp"
+                    android:layout_height="36dp"
+                    android:text="16. Do you donate blood to test for HIV or HEPATITIS?"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/sixteenRadio"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="457dp" />
+
+                <RadioGroup
+                    android:id="@+id/sixteenRadio"
+                    android:layout_width="116dp"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal"
+                    android:showDividers="beginning|middle|end"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="278dp"
+                    tools:layout_editor_absoluteY="457dp">
+
+                    <RadioButton
+                        android:id="@+id/sixteenYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:text="Yes"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="278dp"
+                        tools:layout_editor_absoluteY="59dp" />
+
+                    <RadioButton
+                        android:id="@+id/sixteenNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="341dp"
+                        tools:layout_editor_absoluteY="59dp" />
+                </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/seventeen"
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:text="17. Have you ever lived in the United Kingdom (England, Northern, Ireland, Scotland, Wales, the Isle of Man, or the Channel Island) or Republic of Ireland from 1980 to 1996 for a period of 6 month or longer?"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="507dp" />
+
+                <RadioGroup
+                    android:id="@+id/seventeenRadio"
+                    android:layout_width="116dp"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal"
+                    android:showDividers="beginning|middle|end"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="279dp"
+                    tools:layout_editor_absoluteY="577dp">
+
+                    <RadioButton
+                        android:id="@+id/seventeenYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:text="Yes"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="278dp"
+                        tools:layout_editor_absoluteY="59dp" />
+
+                    <RadioButton
+                        android:id="@+id/seventeenNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="341dp"
+                        tools:layout_editor_absoluteY="59dp" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/eighteen"
+                    android:layout_width="248dp"
+                    android:layout_height="57dp"
+                    android:text="18. Have you ever lived in Europe from 1980 to the present for a period of 6 months or longer?"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/eighteenRadio"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="630dp" />
+
+                <RadioGroup
+                    android:id="@+id/eighteenRadio"
+                    android:layout_width="116dp"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal"
+                    android:showDividers="beginning|middle|end"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="278dp"
+                    tools:layout_editor_absoluteY="630dp">
+
+                    <RadioButton
+                        android:id="@+id/eighteenYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:text="Yes"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="278dp"
+                        tools:layout_editor_absoluteY="59dp" />
+
+                    <RadioButton
+                        android:id="@+id/eighteenNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="341dp"
+                        tools:layout_editor_absoluteY="59dp" />
+                </RadioGroup>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:onClick="submitForm"
+            />
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</ScrollView>

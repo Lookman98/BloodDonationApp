@@ -6,9 +6,12 @@ import androidx.fragment.app.Fragment
 import com.example.blooddonation.ui.DonateFragment
 import com.example.blooddonation.ui.HomeFragment
 import com.example.blooddonation.ui.SettingsFragment
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    lateinit var auth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +32,10 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+
+
     }
+
 
     private fun makeCurrentFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
@@ -37,4 +43,8 @@ class MainActivity : AppCompatActivity() {
             commit();
         }
     }
+
+
+
+
 }
